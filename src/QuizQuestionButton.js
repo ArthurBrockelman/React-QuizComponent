@@ -4,7 +4,7 @@ import Quiz from './Quiz';
 class QuizQuestionButton extends Component {
 
     handleClick() {
-        
+        this.props.clickHandler(this.props.button_text)      
     }
     render() {
 
