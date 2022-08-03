@@ -5,7 +5,6 @@ class QuizQuestion extends React.Component {
 
     handleClick(buttonText) {
 
-        this.props.clickHandler(this.props.button_text)
         if(buttonText === this.props.quiz_question.answer) {
             this.props.showNextQuestionHandler()
         }
