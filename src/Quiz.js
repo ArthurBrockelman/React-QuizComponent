@@ -4,6 +4,7 @@ import QuizEnd from './QuizEnd'
 
 let quizData = require('./quiz_data.json');
 console.log(quizData)
+
 class Quiz extends React.Component {
 
     constructor(props) {
@@ -14,30 +15,13 @@ class Quiz extends React.Component {
     }
 
     render() {
-        const isQuizEnd  = false;
         
-        if(this.state.quiz_position - 1 === quizData.quiz_questions.length) {
-            isQuizEnd = true
-        } else {
-            isQuizEnd = false
-        }
-        
-        
-        if(isQuizEnd) {
-
-            return (
-                <div>
-                <QuizEnd/>
-                </div>
-            )
-        }  else {
-
-            return (
-                <div>
-                <QuizQuestion quiz_question={quizData.quiz_questions[this.state.quiz_position - 1]}/>
-                </div>
-            )
-        }
+        const isQuizEnd = ((this.state.quiz_position - 1) === quizData.quiz_questions.length)
+        return (
+          <div>
+            {isQuizEnd ? <QuizEnd /> : <QuizQuestion quiz_question={quizData.quiz_questions[this.state.quiz_position - 1]} />}
+          </div>
+        )
         
     }
 
