@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import QuizQuestion from './QuizQuestion';
 
 let quizData = require('./quiz_data.json');
-
+console.log(quizData)
 class Quiz extends React.Component {
 
     constructor(props) {
